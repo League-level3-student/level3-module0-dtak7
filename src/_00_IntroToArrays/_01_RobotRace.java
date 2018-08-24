@@ -27,6 +27,7 @@ public class _01_RobotRace {
 				if(y<=50) {
 					System.out.println("yay");
 					isDone=true;
+					robots[i].moveTo(500, 100);
 				}
 			}
 		}
