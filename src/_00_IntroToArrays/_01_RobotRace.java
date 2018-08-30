@@ -14,7 +14,7 @@ public class _01_RobotRace {
 		Robot []robots =new  Robot[5];
 		for(int i=0;i<robots.length;i++) {
 			robots[i] = new Robot(150+i * 150, 500);	
-			robots[i].setSpeed(5);
+			robots[i].setSpeed(10);
 			
 		}
 		
@@ -25,9 +25,13 @@ public class _01_RobotRace {
 				robots[i].move(rand.nextInt(50 + 1));
 				int y=robots[i].getY();
 				if(y<=50) {
-					System.out.println("yay");
+					
+				
 					isDone=true;
-					robots[i].moveTo(500, 100);
+					robots[i].moveTo(500, 500);
+					while(isDone) {
+						System.out.println("WHOOHOOO");
+					}
 				}
 			}
 		}
