@@ -29,15 +29,15 @@ public class _02_FindTheHiddenButton implements ActionListener {
 		window = new JFrame("Find the Button");
 		panel = new JPanel();
 		window.setVisible(true);
-		//window.setSize(700, 700);
+		// window.setSize(700, 700);
 		panel.setVisible(true);
 		window.add(panel);
 
-		//window.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		// window.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 3. Ask the user to enter a positive number and convert it to an int
-		String positiveNumber = JOptionPane.showInputDialog("enter a POSITIVE number");
+		String positiveNumber = JOptionPane.showInputDialog("enter a POSITIVE number LESS than 275");
 		int sizeOfArray = Integer.parseInt(positiveNumber);
 		System.out.println(sizeOfArray);
 		// 4. Initialize the array of JButtons to be the size of the int created in step
@@ -52,8 +52,8 @@ public class _02_FindTheHiddenButton implements ActionListener {
 			buttons[i].addActionListener(this);
 			panel.add(buttons[i]);
 		}
-		window.setSize(900,900);
-		
+		window.setSize(900, 900);
+
 		JOptionPane.showMessageDialog(null, "The goal of the game is to click the button that says HIDE");
 		// 9 add the panel to the window
 
@@ -65,21 +65,33 @@ public class _02_FindTheHiddenButton implements ActionListener {
 
 		// 13. initialize the hiddenButton variable to a random number less than the int
 		// created in step 3
-
+		Random rand = new Random();
+		int hiddenButton = rand.nextInt(sizeOfArray) + 1;
+		buttons[hiddenButton].setText("hide");}
 		// 14. Set the text of the JButton located at hiddenButton to read "ME"
 
 		// 15. Use Thread.sleep(100); to pause the program.
-
+		/*try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println("no can do");
+		}
 		// 16. Set the text of the JButton located at hiddenButton to be blank.
-
+		buttons[hiddenButton].setText("");
 	}
-
+*/
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonClicked = (JButton) e.getSource();
 
 		// 17. if the hiddenButton is clicked, tell the user that they win.
-
+		if(e.getSource()==buttons[hiddenButton]) {
+			System.out.println("you win");
+		}
 		// 18. else tell them to try again
+		else {
+			System.out.println("try again");
+		}
 	}
 }
