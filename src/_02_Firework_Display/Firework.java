@@ -1,6 +1,5 @@
 package _02_Firework_Display;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
@@ -10,12 +9,14 @@ import java.util.Random;
  * then complete the steps. 
  *
  */
-	
+
 public class Firework {
 	public static final int GRAVITY = 1;
-public static void main(String[] args) {
-	Firework();
-}
+
+	public static void main(String[] args) {
+		Firework fire = new Firework();
+	}
+
 	// 1. Create an array of Spark objects called sparks. Don't initialize it.
 	Spark[] sparks;
 	public boolean dead = false;
