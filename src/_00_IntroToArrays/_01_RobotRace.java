@@ -25,8 +25,6 @@ public class _01_RobotRace {
 				robots[i].move(rand.nextInt(50 + 1));
 				int y=robots[i].getY();
 				if(y<=50) {
-					
-				
 					isDone=true;
 					robots[i].moveTo(500, 500);
 					while(isDone) {
